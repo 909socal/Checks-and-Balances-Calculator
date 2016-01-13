@@ -84,6 +84,7 @@ function deleteMe(){
 function clickWith(event){
   //console.log('lol');
  $("tr[data='pos']").css("display", "none");
+ $("tr[data='neg']").css("display", "table-row");
 
 
 }
@@ -91,7 +92,10 @@ function clickWith(event){
 function clickDepo(event){
     //console.log('lol');
 
+
   $("tr[data='neg']").css("display", "none");
+  $("tr[data='pos']").css("display", "table-row");
+
 
 
 }
