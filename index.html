@@ -2,71 +2,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Gurjots Tower</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Gurjots Tower</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<h1>Checks and Balances</h1>
-	<div class = 'container'><br>
-	
-	<div class="form-group">
-		  <label for="usr">Transaction:</label>
-		  <input type="text" class="form-control" id="transaction" required>
-	</div>
+  <h1>Checks and Balances</h1>
+  <div class = 'container'>
+    <br>
+    <form id='newTransactionForm'>
+      <div class="form-group">
+        <label for="usr">Transaction:</label>
+        <input type="text" class="form-control" id="transaction" required>
+      </div>
 
-	<div class="form-group">
-	    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-	    <div class="input-group">
-	    <div class="input-group-addon">$</div>
-	    
-	    	<input type="number" class="form-control" id="moneymoney" placeholder="Amount" required>
-	    
-    </div>
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          
+          <input type="number" class="form-control" id="moneymoney" placeholder="Amount" step="0.01" required>
+          
+        </div>
+      </div>
 
-	<div class="form-group col-xs-4 date">
-       <label for="usr">Date:</label>
-       <input type="date" class="form-control" id="date">
-     </div>
-	<br>
-     <button type="submit" class="btn btn-primary pull-right add ">Add</button>
-     <button type="button" id = 'withB' class="btn btn-success">Withdraw</button>
-	 <button type="button" id = 'depoB' class="btn btn-info">Deposit</button>
-	 <button type="button" id = 'histB' class="btn btn-default">History</button>
-  		
-     <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Transactions</th>
-	        <th>Date</th>
-	        <th>Deposits</th>
-	        <th>Withdraw</th>
-	        <th>Delete</th>
-	      </tr>
-	    </thead>
-	    <tbody id= 'bigBoy'>
-	      <tr id ='template'>
-	        <td class = 'transactions'></td>
-	        <td class = 'date'></td>
-	        <td class = 'deposit'></td>
-	        <td class = 'withdraw'></td>
-	        <td class = 'Delete'>
-	        	<button type="button" class="btn btn-danger deleteButton">Delete</button>
-	        </td>
-	     </tr>
-	    </tbody>
-	  </table>
-	  <h3 class='total'>Total Balance: $0.00</h3>
-	 
+      <div class="form-group col-xs-4 date">
+        <label for="usr">Date:</label>
+        <input type="date" class="form-control" id="date" required>
+      </div>
+      <button class="btn btn-primary pull-right add ">Add</button>
+    </form>
+      
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Transactions</th>
+          <th>Date</th>
+          <th>Deposits</th>
+          <th>Withdraw</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id= 'bigBoy'>
+        <tr id ='template'>
+          <td class = 'transactions'></td>
+          <td class = 'date'></td>
+          <td class = 'deposit'></td>
+          <td class = 'withdraw'></td>
+          <td class = 'Delete'>
+            <button type="button" class="btn btn-danger deleteButton">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 class='total'>Total Balance: $0.00</h3>
+    <form class = 'buttonform'>
+      <h4>Filter By: </h4>
+      <button type="button" id = 'withB' class="btn btn-success">Withdraw</button>
+      <button type="button" id = 'depoB' class="btn btn-info">Deposit</button>
+      <button type="button" id = 'histB' class="btn btn-default">Default</button> 
+    </form>
+      
 
-	</div>
 
-	
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	<script src="http://momentjs.com/downloads/moment.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="main.js"></script>
-</body>
-</html>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+  </html>

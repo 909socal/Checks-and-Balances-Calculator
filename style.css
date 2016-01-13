@@ -10,6 +10,9 @@ h1{
 #template{
 	display: none;
 }
+.buttonform{
+	padding-top: 50px;
+}
 h3{
 	font-size: 30px;
 	color: blue;

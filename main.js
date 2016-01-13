@@ -7,7 +7,7 @@ $(document).ready(init);
 var sum = 0;
 
 function init(){
-  $('.add').on('click' , clickHandler);
+  $('#newTransactionForm').on('submit' , addNewTransaction);
   $('table').on('click', '.deleteButton', deleteMe);
 
   $('#withB').on('click' , clickWith);
@@ -16,7 +16,8 @@ function init(){
   
  }
 
- function clickHandler(event){
+ function addNewTransaction(event){
+  event.preventDefault();
   
  	var tranny = $("#transaction").val();
   var date = $('#date').val();
@@ -25,18 +26,18 @@ function init(){
   var decimal = str.match(/\.\d{1,2}$/)
   //console.log(decimal, amount)
 
-  if(!amount){
-    alert('INVALID AMOUNT!!')
-    return
-  }
-  if(!tranny){
-    alert('INVALID TRANSACTION!!')
-    return
-  }
-  if(!date){
-    alert('INVALID DATE!!')
-    return
-  }
+  // if(!amount){
+  //   alert('INVALID AMOUNT!!')
+  //   return
+  // }
+  // if(!tranny){
+  //   alert('INVALID TRANSACTION!!')
+  //   return
+  // }
+  // if(!date){
+  //   alert('INVALID DATE!!')
+  //   return
+  // }
 
   var $tr = $('#template').clone();
   $tr.removeAttr('id');
@@ -50,10 +51,12 @@ function init(){
     $("#moneymoney").css("color", "red");
 
     $tr.children('.withdraw').text('$ '+ myamount).css("color", "red");
+    $tr.attr('data', 'neg');
     
   
   }else{
      $tr.children('.deposit').text('$ '+ myamount);
+     $tr.attr('data', 'pos');
      
   }
   sum += Number(amount);
@@ -80,24 +83,25 @@ function deleteMe(){
 
 function clickWith(event){
   //console.log('lol');
- $('tr').find('.deposit').css("visibility", "hidden");
- $('tr').find('.withdraw').css("visibility",  "");
+ $("tr[data='pos']").css("display", "none");
+
 
 }
 
 function clickDepo(event){
     //console.log('lol');
 
- $('tr').find('.withdraw').css("visibility", "hidden");
- $('tr').find('.deposit').css("visibility",  "");
+  $("tr[data='neg']").css("display", "none");
+
 
 }
 
 function clickHist(event){
    // console.log('lol');
+  $("tr[data='neg']").css("display", "table-row");
+  $("tr[data='pos']").css("display", "table-row");
 
-  $('tr').find('.deposit').css("visibility",  "");
-  $('tr').find('.withdraw').css("visibility",  "");
+ 
 
 
 }
