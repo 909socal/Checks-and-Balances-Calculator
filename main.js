@@ -57,7 +57,7 @@ function init(){
      
   }
   sum += Number(amount);
-  $('.total').text('$' + sum.toFixed(2));
+  $('.total').text('Total Balance: $' + sum.toFixed(2));
   $('#bigBoy').append($tr);
 
   $("#transaction").val('');
