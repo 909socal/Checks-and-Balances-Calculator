@@ -1,0 +1,19 @@
+#money{
+	width: 40px;
+}
+h1{
+	color: blue;
+}
+.date{
+	padding-left: 0;
+}
+#template{
+	display: none;
+}
+h3{
+	font-size: 30px;
+	color: blue;
+	position: absolute;
+	text-align: center;
+
+}
